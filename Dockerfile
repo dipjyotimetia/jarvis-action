@@ -8,7 +8,7 @@ COPY ./cmd ./cmd
 ADD ./pkg ./pkg
 ADD ./script ./script
 
-RUN CGO_ENABLED=0 GOOS=linux go build -o jarves ./cmd
+RUN CGO_ENABLED=0 GOOS=linux go build -o jarvis ./cmd
 
 FROM alpine:latest  
 WORKDIR /app
