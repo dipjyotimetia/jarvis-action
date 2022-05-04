@@ -4,10 +4,11 @@ WORKDIR /app
 
 COPY ./vendor ./vendor
 COPY go.*  ./
+COPY ./cmd ./cmd
 ADD ./pkg ./pkg
 ADD ./script ./script
 
-RUN CGO_ENABLED=0 GOOS=linux go build -o jarves ./cmd
+RUN CGO_ENABLED=0 GOOS=linux go build -o jarves ./app/cmd
 
 FROM alpine:latest  
 WORKDIR /app
