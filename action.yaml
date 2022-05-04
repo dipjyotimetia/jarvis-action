@@ -5,7 +5,7 @@ branding:
   icon: 'award'  
   color: 'green'
 inputs:
-  GITHUB_TOKEN:  
+  PAT:  
     description: 'A GitHub personal access token used to perform actions.'
     required: true
   GITHUB_REPOSITORY:  
@@ -18,7 +18,7 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-   - ${{ inputs.GITHUB_TOKEN }}
+   - ${{ inputs.PAT }}
    - ${{ inputs.GITHUB_REPOSITORY }}
    - ${{ inputs.OWNER }}
     
