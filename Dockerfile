@@ -1,0 +1,18 @@
+FROM golang:1.18.1-buster AS builder
+
+WORKDIR /app
+
+COPY ./vendor ./vendor
+COPY go.*  ./
+ADD ./pkg ./pkg
+ADD ./script ./script
+
+RUN CGO_ENABLED=0 GOOS=linux go build -o jarves ./cmd
+
+FROM alpine:latest  
+WORKDIR /app
+COPY --from=builder /app /app
+COPY --from=builder /app/script /app/script
+RUN chmod +x /app/script/*
+
+ENTRYPOINT ["/app/script/entrypoint.sh"]
