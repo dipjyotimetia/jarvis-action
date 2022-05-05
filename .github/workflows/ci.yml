@@ -16,5 +16,5 @@ jobs:
       uses: dipjyotimetia/jarvis@main
       with:
         PAT: ${{ secrets.PAT }}
-        GITHUB_REPOSITORY: ${{ github.repository }}
-        OWNER: ${{ github.owner }}
+        GITHUB_REPOSITORY: "jarvis"
+        OWNER: "dipjyotimetia"
