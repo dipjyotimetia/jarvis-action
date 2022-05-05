@@ -7,5 +7,11 @@ import (
 )
 
 func main() {
-	git.ApprovePr(os.Getenv("GITHUB_TOKEN"), os.Getenv("OWNER"), os.Getenv("GITHUB_REPOSITORY"))
+	conf := &git.Config{
+		Token: os.Getenv("GITHUB_TOKEN"),
+		Owner: os.Getenv("OWNER"),
+		Repo:  os.Getenv("GITHUB_REPOSITORY"),
+	}
+
+	git.MergeCheck(conf)
 }

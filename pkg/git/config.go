@@ -1,7 +1,7 @@
 package git
 
 type Config struct {
-	AuthToken string
-	Owner     string
-	Projects  []string
+	Token string
+	Owner string
+	Repo  string
 }

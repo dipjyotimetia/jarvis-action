@@ -1,16 +1,16 @@
-# jarvis
+# jarvis-action
 
 ```yaml
 name: Merge checks
 
 on:
-  push:
-    branches: [ main ]
+  schedule:
+    - cron: '15 * * * *'
   pull_request:
-    branches: [ main ]
+    types:
+      - opened
 
 jobs:
-
   build:
     runs-on: ubuntu-latest
     steps:
@@ -18,7 +18,7 @@ jobs:
     - name: Run pr merge checks
       uses: dipjyotimetia/jarvis@main
       with:
-        PAT: ${{ secrets.GITHUB_TOKEN }}
-        OWNER: ""
-        GITHUB_REPOSITORY: ""
+        PAT: ${{ secrets.PAT }}
+        OWNER: "dipjyotimetia"
+        GITHUB_REPOSITORY: "jarvis"
 ```
