@@ -13,7 +13,6 @@ RUN CGO_ENABLED=0 GOOS=linux go build -o jarvis ./cmd
 
 FROM alpine:latest  
 COPY --from=builder /app /
-COPY --from=builder /app/script /script
 RUN chmod +x /entrypoint.sh && chmod +x ./jarvis
 
 ENTRYPOINT ["/entrypoint.sh"]
