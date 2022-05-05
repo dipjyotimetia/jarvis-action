@@ -11,14 +11,14 @@ func updateBranches(token string, owner string, repos string) {
 	client := AuthGithubAPI(ctx, token)
 	openPr, _, err := client.PullRequests.List(ctx, owner, repos, nil)
 	if err != nil {
-		fmt.Println(err)
+		log.Println(err)
 	}
 	for _, number := range openPr {
 		upBranch, _, err := client.PullRequests.UpdateBranch(ctx, owner, repos, number.GetNumber(), nil)
 		if err != nil {
-			fmt.Println(err)
+			log.Fatalf(err.Error())
 		}
-		fmt.Println(upBranch.GetMessage())
+		log.Println(upBranch.GetMessage())
 	}
 }
 
