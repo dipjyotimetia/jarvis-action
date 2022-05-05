@@ -1,7 +1,5 @@
 #!/bin/sh
 
-cd "${GITHUB_WORKSPACE}" || exit 2
-
 export TOKEN=${1}
 export REPO=${2}
 export REPO_OWNER=${3}
