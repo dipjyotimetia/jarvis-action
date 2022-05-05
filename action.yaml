@@ -1,4 +1,4 @@
-name: "jarvis"
+name: "jarvis-action"
 author: "Dipjyoti Metia" 
 description: "automated github actions"
 branding:

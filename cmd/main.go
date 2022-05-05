@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"github.com/jarvis/pkg/git"
+	"github.com/jarvis-action/pkg/git"
 )
 
 func main() {

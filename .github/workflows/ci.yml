@@ -1,13 +1,13 @@
 name: Merge checks
 
 on:
-  push:
-    branches: [ main ]
+  schedule:
+    - cron: '15 * * * *'
   pull_request:
-    branches: [ main ]
+    types:
+      - opened
 
 jobs:
-
   build:
     runs-on: ubuntu-latest
     steps:

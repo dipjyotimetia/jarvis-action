@@ -1,4 +1,4 @@
-module github.com/jarvis
+module github.com/jarvis-action
 
 go 1.18
 
