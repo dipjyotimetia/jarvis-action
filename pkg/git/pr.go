@@ -64,6 +64,6 @@ func approvePr(conf *Config) {
 }
 
 func MergeCheck(conf *Config) {
-	updateBranches(conf)
+	// updateBranches(conf)
 	approvePr(conf)
 }
