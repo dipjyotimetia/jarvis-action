@@ -4,8 +4,7 @@ on:
   schedule:
     - cron: '15 * * * *'
   pull_request:
-    types:
-      - opened
+    branches: [ master ]
 
 jobs:
   build:
